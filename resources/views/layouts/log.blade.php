@@ -26,7 +26,7 @@
     <script src="{{ asset('js/main.js')}}"></script>
 </head>
 <!-- body -->
-<body class="full-cover-background" style="background-image:url(assets/img/font-login.jpg); background-size:cover;">
+<body class="full-cover-background" style="background-image:url({{ voyager::image(setting('site.Image')) }}); background-size:cover;">
     <div class="form-container">
         <p class="text-center" style="margin-top: 30px;">
             <i class="zmdi zmdi-account-circle zmdi-hc-5x"></i>

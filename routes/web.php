@@ -12,16 +12,20 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-})->name('book');
-
+    return view('inicio');
+})->name('inicio');
+/*
 Route::get('/inicio', function () {
     return view('inicio');
 })->name('inicio');
-
+*/
 Route::get('/book', function () {
     return view('book');
 })->name('book');
+
+//Route::get('/catalogo', function () {
+//})->name('catalogo');
+Route::get('catalogo', 'PostController@index')->name('catalogo');
 
 Route::get('/prestamo', function () {
     return view('prestamo');
@@ -31,3 +35,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/view', 'HomeController@view');
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
