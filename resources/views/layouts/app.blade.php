@@ -50,10 +50,10 @@
                     <ul class="list-unstyled">
                         <li><a href=" {{route('inicio')}} "><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio</a></li>
                         <li>
-                            <div class="dropdown-menu-button"><i class="zmdi zmdi-assignment-o zmdi-hc-fw"></i>&nbsp;&nbsp; Libros y catálogo <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
+                            <div class="dropdown-menu-button"><i class="zmdi zmdi-assignment-o zmdi-hc-fw"></i>&nbsp;&nbsp; Catalogo de libros <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
                             <ul class="list-unstyled">
                                 <!-- editando linea de la uri para dirigirnos a la pestaña deseada -->
-                                <li><a href="{{ route('book')}}"><i class="zmdi zmdi-book zmdi-hc-fw"></i>&nbsp;&nbsp; Registro libro</a></li>
+
                                 <li><a href="{{ route('catalogo')}}"><i class="zmdi zmdi-bookmark-outline zmdi-hc-fw"></i>&nbsp;&nbsp; Catálogo</a></li>
                             </ul>
                         </li>
@@ -63,7 +63,7 @@
                                 <!-- crear la pagina de registro de prestamo y agregarlo ver reservaciones y ver Devoluciones -->
                                 <li><a href="#"><i class="zmdi zmdi-calendar zmdi-hc-fw"></i>&nbsp;&nbsp; Registrar prestamo de libro</a></li>
                                 <li>
-                                <li><a href=" {{ route('prestamo')}} "><i class="zmdi zmdi-calendar zmdi-hc-fw"></i>&nbsp;&nbsp; Todos los préstamos</a></li>
+                                <li><a href=" {{ route('showprestamo')}} "><i class="zmdi zmdi-calendar zmdi-hc-fw"></i>&nbsp;&nbsp; Todos los préstamos</a></li>
                                 <li>
                                     <a href="loanpending.html"><i class="zmdi zmdi-time-restore zmdi-hc-fw"></i>&nbsp;&nbsp; Devoluciones pendientes <span class="label label-danger pull-right label-mhover">7</span></a>
                                 </li>
@@ -105,12 +105,16 @@
                                 @csrf
                             </form>
                         </li>
+                        <!-- metodo para el buscador -->
+                        <li  class="tooltips-general">
 
-
-
-
-                        <li  class="tooltips-general search-book-button" data-href="searchbook.html" data-placement="bottom" title="Buscar libro">
-                            <i class="zmdi zmdi-search"></i>
+                            <form action="{{ route('search') }}" method="POST" role="search">
+                                @csrf
+                                <input class="buscar" align="middle" type="search" name="search" placeholder="¿Que libro esta buscando?">
+                                <button type="submit">
+                                    <i class="zmdi zmdi-search"></i>
+                                </button>
+                            </form>
                         </li>
                         <li  class="tooltips-general btn-help" data-placement="bottom" title="Ayuda">
                             <i class="zmdi zmdi-help-outline zmdi-hc-fw"></i>

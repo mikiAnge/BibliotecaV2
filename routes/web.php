@@ -19,17 +19,20 @@ Route::get('/inicio', function () {
     return view('inicio');
 })->name('inicio');
 */
-Route::get('/book', function () {
-    return view('book');
-})->name('book');
-
-//Route::get('/catalogo', function () {
-//})->name('catalogo');
-Route::get('catalogo', 'PostController@index')->name('catalogo');
-
 Route::get('/prestamo', function () {
     return view('prestamo');
 })->name('prestamo');
+//otro metodo de llamado a la base de datos
+//Route::get('/catalogo', function () {
+//})->name('catalogo');
+Route::get('catalogo', 'PostController@index')->name('catalogo');
+Route::get('catalogo/{slug}', 'PostController@prestamo');
+//para el buscador
+Route::match(['get', 'post'], '/resultados', 'SearchController@index')->name('search');
+
+Route::get('/showprestamo', function () {
+    return view('showprestamo');
+})->name('showprestamo');
 
 Auth::routes();
 

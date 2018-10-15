@@ -29,7 +29,7 @@
             @foreach ($posts as $post)
             <div class="media media-hover">
                 <div class="media-left media-middle">
-                    <a href="/catalogo/{{ $post->slug}}" class="tooltips-general" data-toggle="tooltip" data-placement="right" title="Para mas detalles">
+                    <a href="{{route('catalogo')}}/{{ $post->slug}}" class="tooltips-general" data-toggle="tooltip" data-placement="right" title="Para mas detalles">
                       <img class="media-object" src="{{ Voyager::image($post->image)}}" alt="Libro" width="48" height="48">
                     </a>
                 </div>
@@ -42,10 +42,13 @@
                         <p>{{ $post->excerpt}}</p>
                     </div>
                     <p class="text-center pull-right">
-                        <a href="#!" class="btn btn-info btn-xs" style="margin-right: 10px;"><i class="zmdi zmdi-info-outline"></i> &nbsp;&nbsp; Más información</a>
+                        <a href="{{route('catalogo')}}/{{ $post->slug}}" class="btn btn-info btn-xs" style="margin-right: 10px;"><i class="zmdi zmdi-info-outline"></i> &nbsp;&nbsp; Registrar prestamo</a>
                     </p>
                 </div>
             </div>
             @endforeach
+            <div class="pagination">
+                {{ $posts->render()}}
+            </div>
         </div>
 @endsection
