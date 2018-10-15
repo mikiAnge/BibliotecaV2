@@ -25,14 +25,21 @@ Route::get('/prestamo', function () {
 //otro metodo de llamado a la base de datos
 //Route::get('/catalogo', function () {
 //})->name('catalogo');
-Route::get('catalogo', 'PostController@index')->name('catalogo');
-Route::get('catalogo/{slug}', 'PostController@prestamo');
+
+//Route::get('catalogo', 'PostController@index')->name('catalogo');
+//Route::get('catalogo/{slug}', 'PostController@prestamo');
+
+Route::get('catalogo', 'BookController@index')->name('catalogo');
+Route::get('catalogo/{slug}', 'BookController@prestamo');
+
+Route::get('showprestamo', 'LoanController@index')->name('showprestamo');
+//Route::get('showprestamo/{slug}', 'LoanController@prestamo');
 //para el buscador
 Route::match(['get', 'post'], '/resultados', 'SearchController@index')->name('search');
 
-Route::get('/showprestamo', function () {
+/*Route::get('/showprestamo', function () {
     return view('showprestamo');
-})->name('showprestamo');
+})->name('showprestamo');*/
 
 Auth::routes();
 

@@ -34,30 +34,37 @@
             <div class="div-table" style="margin:0 !important;">
                 <div class="div-table-row div-table-row-list" style="background-color:#DFF0D8; font-weight:bold;">
                     <div class="div-table-cell" style="width: 6%;">#</div>
-                    <div class="div-table-cell" style="width: 22%;">Nombre de libro</div>
-                    <div class="div-table-cell" style="width: 22%;">Nombre de usuario</div>
-                    <div class="div-table-cell" style="width: 10%;">Tipo</div>
+                    <div class="div-table-cell" style="width: 22%;">Titulo de libro</div>
+                    <div class="div-table-cell" style="width: 18%;">Nombre de usuario</div>
+                    <div class="div-table-cell" style="width: 10%;">C.U. o C.I.</div>
+                    <div class="div-table-cell" style="width: 10%;">Categoria</div>
+                    <div class="div-table-cell" style="width: 10%;">Numero de Celular</div>
                     <div class="div-table-cell" style="width: 10%;">F. Solicitud</div>
-                    <div class="div-table-cell" style="width: 10%;">F. Entrega</div>
-                    <div class="div-table-cell" style="width: 8%;">Eliminar</div>
-                    <div class="div-table-cell" style="width: 8%;">Ver Ficha</div>
+                    <div class="div-table-cell" style="width: 10%;">F. Entrega</div><br>
                 </div>
             </div>
         </div>
         <div class="table-responsive">
             <div class="div-table" style="margin:0 !important;">
                 <div class="div-table-row div-table-row-list">
-                    <div class="div-table-cell" style="width: 6%;">#</div>
-                    <div class="div-table-cell" style="width: 22%;">Nombre de Libro</div>
-                    <div class="div-table-cell" style="width: 22%;">Nombre de Usuario</div>
-                    <div class="div-table-cell" style="width: 10%;">Tipo</div>
-                    <div class="div-table-cell" style="width: 10%;">F. Solicitud</div>
-                    <div class="div-table-cell" style="width: 10%;">F. Entrega</div>
+                    @foreach ($loans as $loan)
+                    <div class="div-table-cell" style="width: 6%;">{{ $loan->id}}</div>
+                    <div class="div-table-cell" style="width: 22%;">{{ $loan->titulo}}</div>
+                    <div class="div-table-cell" style="width: 22%;">{{ $loan->nombre}}</div>
+                    <div class="div-table-cell" style="width: 10%;">{{ $loan->cicu}}</div>
+                    <div class="div-table-cell" style="width: 10%;">{{ $loan->category_id}}</div>
+                    <div class="div-table-cell" style="width: 10%;">{{ $loan->numerocelular}}</div>
+                    <div class="div-table-cell" style="width: 10%;">{{ $loan->fechasolicitud}}</div>
+                    <div class="div-table-cell" style="width: 10%;">{{ $loan->fechaentrega}}</div>
                     <div class="div-table-cell" style="width: 8%;">
                         <button class="btn btn-danger"><i class="zmdi zmdi-delete"></i></button>
                     </div>
                     <div class="div-table-cell" style="width: 8%;">
                         <button class="btn btn-info"><i class="zmdi zmdi-file-text"></i></button>
+                    </div>
+                    @endforeach
+                    <div class="pagination">
+                        {{ $loans->render()}}
                     </div>
                 </div>
             </div>

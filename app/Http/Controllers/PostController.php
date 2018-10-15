@@ -19,4 +19,5 @@ class PostController extends Controller
         $post = Post::where('slug','=', $slug)->firstOrFail();
         return view('prestamo', compact('categoria','post'));
     }
+
 }

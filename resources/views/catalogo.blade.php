@@ -26,29 +26,31 @@
             </ul>
         </div>
         <div class="container-fluid">
-            @foreach ($posts as $post)
+            @foreach ($books as $book)
             <div class="media media-hover">
                 <div class="media-left media-middle">
-                    <a href="{{route('catalogo')}}/{{ $post->slug}}" class="tooltips-general" data-toggle="tooltip" data-placement="right" title="Para mas detalles">
-                      <img class="media-object" src="{{ Voyager::image($post->image)}}" alt="Libro" width="48" height="48">
+                    <a href="{{route('catalogo')}}/{{ $book->slug}}" class="tooltips-general" data-toggle="tooltip" data-placement="right" title="Para mas detalles">
+                      <img class="media-object" src="{{ Voyager::image($book->image)}}" alt="Libro" width="48" height="48">
                     </a>
                 </div>
                 <div class="media-body">
-                    <h4 class="media-heading">{{$post->title}}</h4>
+                    <h4 class="media-heading">{{$book->titulo}}</h4>
                     <div class="pull-left">
                         <strong>Autor<br>
+                        <p>{{ $book->autor}}</p>
                         <strong>Año<br>
+                        <p>{{ $book->anio}}</p>
                         <strong>Descripcion:<br>
-                        <p>{{ $post->excerpt}}</p>
+                        <p>{{ $book->descripcion}}</p>
                     </div>
                     <p class="text-center pull-right">
-                        <a href="{{route('catalogo')}}/{{ $post->slug}}" class="btn btn-info btn-xs" style="margin-right: 10px;"><i class="zmdi zmdi-info-outline"></i> &nbsp;&nbsp; Registrar prestamo</a>
+                        <a href="{{route('catalogo')}}/{{ $book->slug}}" class="btn btn-info btn-xs" style="margin-right: 10px;"><i class="zmdi zmdi-info-outline"></i> &nbsp;&nbsp; Registrar prestamo</a>
                     </p>
                 </div>
             </div>
             @endforeach
             <div class="pagination">
-                {{ $posts->render()}}
+                {{ $books->render()}}
             </div>
         </div>
 @endsection

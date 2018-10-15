@@ -25,6 +25,25 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-8 col-sm-offset-2">
                         <legend><strong>Información básica</strong></legend><br>
+
+                        <div class="group-material">
+                            <input type="text" value="{{ $book->titulo}}" class="tooltips-general material-control" placeholder="Escribe aquí el título o nombre del libro" required="" maxlength="70" data-toggle="tooltip" data-placement="top" title="Escribe el título o nombre del libro">
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Título del libro</label>
+                        </div>
+                        <div class="group-material">
+                            <input type="text" class="tooltips-general material-control" placeholder="Escribe aquí el nombre completo" required="" maxlength="70" data-toggle="tooltip" data-placement="top" title="Escribe el nombre Completo">
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Nombre</label>
+                        </div>
+                        <div class="group-material">
+                            <input type="text" class="tooltips-general material-control" placeholder="Escribe aquí el Cartenet Universitario o el de Identidad" required="" maxlength="12" data-toggle="tooltip" data-placement="top" title="Escribe el carnet universitario o el de identidad">
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>C.U. o C.I.</label>
+                        </div>
                         <div class="group-material">
                             <span>Categoría</span>
                             <select class="tooltips-general material-control" data-toggle="tooltip" data-placement="top" title="Elige la categoría del libro">
@@ -35,53 +54,28 @@
                             </select>
                         </div>
                         <div class="group-material">
-                            <input type="text" class="tooltips-general material-control" placeholder="Escribe aquí el código correlativo del libro" pattern="[0-9]{1,20}" required="" maxlength="20" data-toggle="tooltip" data-placement="top" title="Escribe el código correlativo del libro, solamente números">
+                            <input type="text" class="material-control tooltips-general" placeholder="Escribe aquí el domicilio" required="" maxlength="70" data-toggle="tooltip" data-placement="top" title="Introduzca el domicilio donde vive">
                             <span class="highlight"></span>
                             <span class="bar"></span>
-                            <label>Código del libro</label>
+                            <label>Direccion</label>
                         </div>
                         <div class="group-material">
-                            <input type="text" value="{{ $post->title}}" class="tooltips-general material-control" placeholder="Escribe aquí el título o nombre del libro" required="" maxlength="70" data-toggle="tooltip" data-placement="top" title="Escribe el título o nombre del libro">
+                            <input type="number" class="material-control tooltips-general" placeholder="Cel:78521356" required="" maxlength="8" data-toggle="tooltip" data-placement="top" title="Digite el numero de contacto">
                             <span class="highlight"></span>
                             <span class="bar"></span>
-                            <label>Título del libro</label>
+                            <label>Numero Celular</label>
                         </div>
                         <div class="group-material">
-                            <input type="text" class="tooltips-general material-control" placeholder="Escribe aquí el autor del libro" required="" maxlength="70" data-toggle="tooltip" data-placement="top" title="Escribe el nombre del autor del libro">
+                            <input type="datetime-local" class="material-control tooltips-general" required=" " data-toggle="tooltip" data-placement="top" title="Seleccione la fecha">
                             <span class="highlight"></span>
                             <span class="bar"></span>
-                            <label>Autor</label>
+                            <label>Fecha de Solicitud</label>
                         </div>
                         <div class="group-material">
-                            <input type="text" class="tooltips-general material-control" placeholder="Escribe aquí el país del libro" required="" maxlength="50" data-toggle="tooltip" data-placement="top" title="Escribe el país del libro">
+                            <input type="datetime-local" class="material-control tooltips-general" required=" " data-toggle="tooltip" data-placement="top" title="Seleccione la fecha">
                             <span class="highlight"></span>
                             <span class="bar"></span>
-                            <label>País</label>
-                        </div>
-                        <legend><strong>Otros datos</strong></legend><br>
-                        <div class="group-material">
-                            <input type="text" class="material-control tooltips-general" placeholder="Escribe aquí el año del libro" required="" pattern="[0-9]{1,4}" maxlength="4" data-toggle="tooltip" data-placement="top" title="Solamente números, sin espacios">
-                            <span class="highlight"></span>
-                            <span class="bar"></span>
-                            <label>Año</label>
-                        </div>
-                        <div class="group-material">
-                            <input type="text" class="material-control tooltips-general" placeholder="Escribe aquí la editorial del libro" required="" maxlength="70" data-toggle="tooltip" data-placement="top" title="Editorial del libro">
-                            <span class="highlight"></span>
-                            <span class="bar"></span>
-                            <label>Editorial</label>
-                        </div>
-                        <div class="group-material">
-                            <input type="text" class="material-control tooltips-general" placeholder="Escribe aquí la edición del libro" required="" maxlength="50" data-toggle="tooltip" data-placement="top" title="Edición del libro">
-                            <span class="highlight"></span>
-                            <span class="bar"></span>
-                            <label>Edición</label>
-                        </div>
-                        <div class="group-material">
-                            <input type="text" class="material-control tooltips-general"  placeholder="Escribe aquí la cantidad de libros que registraras" required=" "pattern="[0-9]{1,7}" maxlength="7" data-toggle="tooltip" data-placement="top" title="¿Cuántos libros registraras?">
-                            <span class="highlight"></span>
-                            <span class="bar"></span>
-                            <label>Ejemplares</label>
+                            <label>Fecha de Entrega</label>
                         </div>
                         <p class="text-center">
                             <button type="reset" class="btn btn-info" style="margin-right: 20px;"><i class="zmdi zmdi-roller"></i> &nbsp;&nbsp; Limpiar</button>
