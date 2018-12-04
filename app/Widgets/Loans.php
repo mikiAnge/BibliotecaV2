@@ -7,7 +7,7 @@ use Illuminate\Support\Str;
 use TCG\Voyager\Facades\Voyager;
 use Arrilot\Widgets\AbstractWidget;
 
-class Books extends AbstractWidget
+class Loans extends AbstractWidget
 {
     /**
      * The configuration array.
@@ -22,18 +22,18 @@ class Books extends AbstractWidget
      */
     public function run()
     {
-        $count = \App\Book::count();
-        $string = 'Libros';
+        $count = \App\Loan::count();
+        $string = 'Prestamos y Reservas';
 
         return view('voyager::dimmer', array_merge($this->config, [
-            'icon'   => 'voyager-book',
+            'icon'   => 'voyager-logbook',
             'title'  => "{$count} {$string}",
             'text'   => __('voyager::dimmer.post_text', ['count' => $count, 'string' => Str::lower($string)]),
             'button' => [
-                'text' => 'Ver todos los libros',
-                'link' => route('voyager.books.index'),
+                'text' => 'Ver prestamos y reserveas',
+                'link' => route('voyager.loans.index'),
             ],
-            'image' => 'assets/img/bookfondo.jpg',
+            'image' => 'assets/img/prestamo.jpg',
         ]));
     }
 
