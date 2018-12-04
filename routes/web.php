@@ -19,9 +19,12 @@ Route::get('/inicio', function () {
     return view('inicio');
 })->name('inicio');
 */
-Route::get('/prestamo', function () {
+Route::post('/prestamo', 'LoanController@store');
+
+Route::get('/prestamo',  function () {
     return view('prestamo');
 })->name('prestamo');
+
 //otro metodo de llamado a la base de datos
 //Route::get('/catalogo', function () {
 //})->name('catalogo');

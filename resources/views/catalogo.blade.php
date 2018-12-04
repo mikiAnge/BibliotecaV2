@@ -17,20 +17,25 @@
                 </div>
             </div>
         </div>
+        <!--
         <div class="container-fluid" style="margin: 0 0 50px 0;">
             <h2 class="text-center" style="margin: 0 0 25px 0;">Categorías</h2>
             <ul class="list-unstyled text-center list-catalog-container">
-                <li class="list-catalog">Categoría</li>
-                <li class="list-catalog">Categoría</li>
-                <li class="list-catalog">Categoría</li>
+                <select id="categoria" name="categoria" class="tooltips-general material-control" data-toggle="tooltip" data-placement="top" title="Elige la categoría del libro">
+                    <option value="" disabled="" selected="">Selecciona una categoría</option>
+                    @foreach ($categorias as $categoria)
+                        <option value="{{ $categoria->name}}">{{ $categoria->name}}</option>
+                    @endforeach
+                </select>
             </ul>
         </div>
+        -->
         <div class="container-fluid">
             @foreach ($books as $book)
             <div class="media media-hover">
                 <div class="media-left media-middle">
                     <a href="{{route('catalogo')}}/{{ $book->slug}}" class="tooltips-general" data-toggle="tooltip" data-placement="right" title="Para mas detalles">
-                      <img class="media-object" src="{{ Voyager::image($book->image)}}" alt="Libro" width="48" height="48">
+                      <img class="media-object" src="{{ Voyager::image($book->image)}}" alt="Libro" width="150" height="250">
                     </a>
                 </div>
                 <div class="media-body">

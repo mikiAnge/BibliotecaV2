@@ -11,6 +11,7 @@
     </div>
 
     <section class="full-reset text-center" style="padding: 40px 0;">
+        <!--
         <article class="tile">
             <div class="tile-icon full-reset"><i class="zmdi zmdi-face"></i></div>
             <div class="tile-name all-tittles">administradores</div>
@@ -70,6 +71,7 @@
             <div class="tile-icon full-reset"><i class="zmdi zmdi-trending-up"></i></div>
             <div class="tile-name all-tittles" style="width: 90%;">reportes y estadísticas</div>
             <div class="tile-num full-reset">&nbsp;</div>
-        </article>
+        </article> -->
+
     </section>
 @endsection

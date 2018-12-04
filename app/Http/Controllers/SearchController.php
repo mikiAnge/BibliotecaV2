@@ -29,7 +29,11 @@ class SearchController extends Controller
         $search = Input::get('search');
 
         if($search != ""){
-            $book = Book::where('Titulo', 'LIKE', '%' . $search . '%')->orderBy('created_at', 'desc')->paginate(8);
+            $book = Book::where('titulo', 'like', '%' . $search . '%')
+            //->orWhere('category', 'like', '%'. $search. '%')
+            ->orWhere('descripcion', 'like', '%'. $search. '%')
+            ->orWhere('indice', 'like', '%'. $search. '%')
+            ->orderBy('created_at', 'desc')->paginate(8);
 
             if(count($book) > 0)
             return view('search')->withDetails($book)

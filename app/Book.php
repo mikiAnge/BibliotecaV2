@@ -8,6 +8,28 @@ class Book extends Model
 {
     public function category()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Categoria::class);
     }
+
+    protected $fillable = [
+        'category_id',
+        'codigo',
+        'titulo',
+        'autor',
+        'pais',
+        'anio',
+        'editorial',
+        'edicion',
+        'ejemplares',
+        'image',
+        'descripcion',
+        'slug',
+    ];
+
+    /*
+    public function category()
+    {
+        return $this->belongsTo(Voyager::modelClass('Category'));
+    }
+    */
 }
