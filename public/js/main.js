@@ -17,11 +17,11 @@ $(document).ready(function(){
         var LinkExitSystem=$(this).attr("data-href");
         swal({
             title: "¿Estás seguro?",
-            text: "Quieres salir del sistema y cerrar la sesión actual",
+            text: "Cerrar la sesión actual",
             type: "warning",
             showCancelButton: true,
             confirmButtonColor: "#5cb85c",
-            confirmButtonText: "Si, salir",
+            confirmButtonText: "Si, Cerrar",
             cancelButtonText: "No, cancelar",
             animation: "slide-from-top",
             closeOnConfirm: false
@@ -35,7 +35,7 @@ $(document).ready(function(){
         var LinkSearchBook=$(this).attr("data-href");
         swal({
            title: "¿Qué libro estás buscando?",
-           text: "Por favor escribe el nombre del libro",
+           text: "Por favor escribe lo que deseas buscar",
            type: "input",
            showCancelButton: true,
            closeOnConfirm: false,
@@ -51,7 +51,9 @@ $(document).ready(function(){
                swal.showInputError("Debes escribir el nombre del libro");
                return false;
            }
-            window.location=LinkSearchBook+"?bookName="+inputValue;
+            window.location=LinkSearchBook+"?search="+inputValue;
+        //aqui se coloca la variable a comprobar^^ y luego se le cargan los valores a dicha variable
+        //ver si se le pueden cargar los de mas parametros
        });
     });
     $('.btn-help').on('click', function(){

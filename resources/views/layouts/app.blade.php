@@ -57,12 +57,11 @@
                                 <li><a href="{{ route('catalogo')}}"><i class="zmdi zmdi-bookmark-outline zmdi-hc-fw"></i>&nbsp;&nbsp; Catálogo</a></li>
                             </ul>
                         </li>
+                        <!--
                         <li>
                             <div class="dropdown-menu-button"><i class="zmdi zmdi-alarm zmdi-hc-fw"></i>&nbsp;&nbsp; Préstamos y reservaciones <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
                             <ul class="list-unstyled">
-                                <!-- crear la pagina de registro de prestamo y agregarlo ver reservaciones y ver Devoluciones -->
-                                <li><a href="#"><i class="zmdi zmdi-calendar zmdi-hc-fw"></i>&nbsp;&nbsp; Registrar prestamo de libro</a></li>
-                                <li>
+
                                 <li><a href=" {{ route('showprestamo')}} "><i class="zmdi zmdi-calendar zmdi-hc-fw"></i>&nbsp;&nbsp; Todos los préstamos</a></li>
                                 <li>
                                     <a href="loanpending.html"><i class="zmdi zmdi-time-restore zmdi-hc-fw"></i>&nbsp;&nbsp; Devoluciones pendientes <span class="label label-danger pull-right label-mhover">7</span></a>
@@ -72,8 +71,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="report.html"><i class="zmdi zmdi-trending-up zmdi-hc-fw"></i>&nbsp;&nbsp; Reportes y estadísticas</a></li>
-                        <li><a href="advancesettings.html"><i class="zmdi zmdi-wrench zmdi-hc-fw"></i>&nbsp;&nbsp; Configuraciones avanzadas</a></li>
+                        -->
                     </ul>
                 </div>
             </div>
@@ -105,7 +103,14 @@
                                 @csrf
                             </form>
                         </li>
-                        <!-- metodo para el buscador -->
+
+
+                        <li  class="tooltips-general search-book-button" data-href="{{ route('search')}}" data-placement="bottom" title="Buscar libro">
+                            <i class="zmdi zmdi-search"></i>
+
+
+                        <!-- metodo para el buscador esto esta comentado por cuestiones de mejora en el codigo
+
                         <li  class="tooltips-general">
 
                             <form action="{{ route('search') }}" method="POST" role="search">
@@ -115,7 +120,7 @@
                                     <i class="zmdi zmdi-search"></i>
                                 </button>
                             </form>
-                        </li>
+                        </li> -->
                         <li  class="tooltips-general btn-help" data-placement="bottom" title="Ayuda">
                             <i class="zmdi zmdi-help-outline zmdi-hc-fw"></i>
                         </li>
@@ -139,7 +144,10 @@
                         <h4 class="modal-title text-center all-tittles">ayuda del sistema</h4>
                     </div>
                     <div class="modal-body">
-                        Describir aqui la ayuda referente a la pagina.
+                        Mediante los diferentes botones, de esta paleta, podes realizar &nbsp;
+                        Busquedas referentes al contenido de los libros, y el boton de salir &nbsp; 
+                        para salir del sistema, en el sector izquierdo de tu pantalla podes ir a la vista del catalogo &nbsp;
+                        en donde podras ver todos los libros disponibles en el banco de la biblioteca. 
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="zmdi zmdi-thumb-up"></i> &nbsp; De acuerdo</button>
@@ -155,18 +163,18 @@
                         <div class="col-xs-12 col-sm-6">
                             <h4 class="all-tittles">Acerca de</h4>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam quam dicta et, ipsum quo. Est saepe deserunt, adipisci eos id cum, ducimus rem, dolores enim laudantium eum repudiandae temporibus sapiente.
+                                Plataforma virtual desarrolada para la busqueda, consulta y reserva de libros para el estudiante, docente y personas que requieran de un libro.
                             </p>
                         </div>
                         <div class="col-xs-12 col-sm-6">
                             <h4 class="all-tittles">Desarrollador</h4>
                             <ul class="list-unstyled">
-                                <li><i class="zmdi zmdi-check zmdi-hc-fw"></i>&nbsp; bootstrap 3 <i class="zmdi zmdi-facebook zmdi-hc-fw footer-social"></i><i class="zmdi zmdi-twitter zmdi-hc-fw footer-social"></i></li>
+                                <li><i class="zmdi zmdi-check zmdi-hc-fw"></i>&nbsp; Miguel A. Ruiz & Wilson Medina <i class="zmdi zmdi-facebook zmdi-hc-fw footer-social"></i><i class="zmdi zmdi-twitter zmdi-hc-fw footer-social"></i></li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="footer-copyright full-reset all-tittles">© 2016 modelo Creado con bootstrap 3</div>
+                <div class="footer-copyright full-reset all-tittles">© Ingenieria de Software II</div>
             </footer>
         </div>
 </body>
